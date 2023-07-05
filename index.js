@@ -55,27 +55,35 @@ $("#card-number-input").on("input", function(){
     $(".card-numb").text(spacedValue)
 })
 
-$("#card-first-name-input").on("input", function(){
-    let typedFirst = $(this).val()
-
-    if(flipCard == false){
-        $(".card").toggleClass("flipped");
-        flipCard = true
+$("#card-first-name-input").on("input", function() {
+    let typedFirst = $(this).val();
+  
+    if (typedFirst === "") {
+      $(".first-name").text("First");
+    } else {
+      $(".first-name").text(typedFirst);
     }
-
-    $(".first-name").text(typedFirst)
-})
-
-$("#card-last-name-input").on("input", function(){
-    let typedLast = $(this).val()
-
-    if(flipCard == false){
-        $(".card").toggleClass("flipped");
-        flipCard = true
+  
+    if (!flipCard) {
+      $(".card").toggleClass("flipped");
+      flipCard = true;
     }
+  });
 
-    $(".last-name").text(typedLast)
-})
+$("#card-last-name-input").on("input", function() {
+    let typedLast = $(this).val();
+  
+    if (typedLast === "") {
+      $(".last-name").text("Last");
+    } else {
+      $(".last-name").text(typedLast);
+    }
+  
+    if (!flipCard) {
+      $(".card").toggleClass("flipped");
+      flipCard = true;
+    }
+  });
 
  $("#card-expiration-input").on("input", function() {
     let typedExpire = $(this).val();
