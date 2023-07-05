@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+
+        <div class="card-front">
+            <h2>Credit Card</h2>
+            <!-- Chip -->
+            <p class="card-numb">xxxx xxxx xxxx xxxx</p>
+            <p class="first-name">First</p>
+            <p class="last-name">Last</p>
+            <p class="good-thru">Good Thru</p>
+            <p class="exp-date">00/00</p>
+        </div>
+
+        <!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="card-back">
+            <div class="strip"></div>
+            <p class="sign-title">Authorized Signature</p>
+            <div class="signature-div">
+                <div class="signature"></div>
+                <p>0000</p>
+            </div>
+            <p class="cvc">000</p>
+        </div>
+
+        <!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="form">
+            <h3>Payment</h3>
+
+            <div class="image-div">
+                <img src=""/>
+                <img src=""/>
+                <img src=""/>
+                <img src=""/>
+            </div>
+
+            <label for="card-first-name-input">First Name</label>
+            <input type="text" id="card-first-name-input" placeholder="Ex. John"/>
+
+            <label for="card-last-name-input">Last Name</label>
+            <input type="text" id="card-last-name-input" placeholder="Ex. Doe"/>
+
+            <label for="card-number-input">Card Number</label>
+            <input type="text" id="card-number-input" placeholder="1234 5678 9012 3456"/>
+
+            <label for="card-expiration-input">Expiration</label>
+            <input type="text" id="card-expiration-input" placeholder="01 / 23"/>
+
+            <label for="card-cvc-input">Security Code</label>
+            <input type="text" id="card-cvc-input" placeholder="1234"/>
+
+            <button class="submit-button">Submit</button>
+        </div>
+
+    </main>
+    
+</body>
+</html>
