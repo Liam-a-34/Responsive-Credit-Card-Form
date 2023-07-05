@@ -8,28 +8,37 @@
 </head>
 <body>
 
-    <main>
+    <div class="main">
 
-        <div class="card-front">
-            <h2>Credit Card</h2>
-            <!-- Chip -->
-            <p class="card-numb">xxxx xxxx xxxx xxxx</p>
-            <p class="first-name">First</p>
-            <p class="last-name">Last</p>
-            <p class="good-thru">Good Thru</p>
-            <p class="exp-date">00/00</p>
-        </div>
+        <div class="card-cont">
+            <div class="card">
+                <div class="card-front">
+                    <h2 class="card-type">Credit Card</h2>
+                    <img class="chip" src="./images/chip.png"/>
+                    <p class="card-numb">xxxx xxxx xxxx xxxx</p>
+                    <div class="card-name-div">
+                        <p class="first-name">First</p>
+                        <p class="last-name">Last</p>
+                    </div>
+                    <p class="good-thru">Good Thru</p>
+                    <p class="exp-date">00 / 00</p>
+                </div>
 
-        <!-- ------------------------------------------------------------------------------------------------------------------- -->
+                <!-- ------------------------------------------------------------------------------------------------------------------- -->
 
-        <div class="card-back">
-            <div class="strip"></div>
-            <p class="sign-title">Authorized Signature</p>
-            <div class="signature-div">
-                <div class="signature"></div>
-                <p>0000</p>
+                <div class="card-back">
+                    <div class="strip"></div>
+                    <p class="sign-title">Authorized Signature</p>
+                    <div class="signature-div">
+                        <div class="signature"></div>
+                    </div>
+                    <p class="cvc">000</p>
+                    <p class="disclaimer">
+                        This card is just for goofy, goofy, fun, fun stuff. This is not a real card, nor will it ever be a real card.
+                        It cannot identify as a credit card, or transition in to a credit card. This is a thing on a screen, made out of HTML and CSS.
+                    </p>
+                </div>
             </div>
-            <p class="cvc">000</p>
         </div>
 
         <!-- ------------------------------------------------------------------------------------------------------------------- -->
@@ -38,31 +47,46 @@
             <h3>Payment</h3>
 
             <div class="image-div">
-                <img src=""/>
-                <img src=""/>
-                <img src=""/>
-                <img src=""/>
+                <img id="visa" src="./images/294654_visa_icon.png"/>
+                <img id="masterCard" src="./images/1156750_finance_mastercard_payment_icon.png"/>
+                <img id="amex" src="./images/4373073_amex_card_credit_logo_logos_icon.png"/>
+                <img id="discover" src="./images/70605_discover_curved_icon.png"/>
             </div>
 
-            <label for="card-first-name-input">First Name</label>
-            <input type="text" id="card-first-name-input" placeholder="Ex. John"/>
+            <div class="name-cont">
+                <div class="name-div">
+                    <label for="card-first-name-input">First Name</label>
+                    <input type="text" id="card-first-name-input" placeholder="Ex. John"/>
+                </div>
+                <div class="name-div last-name-div">
+                    <label for="card-last-name-input">Last Name</label>
+                    <input type="text" id="card-last-name-input" placeholder="Ex. Doe"/>
+                </div>
+            </div>
 
-            <label for="card-last-name-input">Last Name</label>
-            <input type="text" id="card-last-name-input" placeholder="Ex. Doe"/>
+            <div class="number-div">
+                <label for="card-number-input">Card Number</label>
+                <input type="text" id="card-number-input" placeholder="1234567890123456"/>
+            </div>
 
-            <label for="card-number-input">Card Number</label>
-            <input type="text" id="card-number-input" placeholder="1234 5678 9012 3456"/>
-
-            <label for="card-expiration-input">Expiration</label>
-            <input type="text" id="card-expiration-input" placeholder="01 / 23"/>
-
-            <label for="card-cvc-input">Security Code</label>
-            <input type="text" id="card-cvc-input" placeholder="1234"/>
-
+            <div class="security-cont">
+                <div class="expire-div">
+                    <label for="card-expiration-input">Expiration</label>
+                    <input type="text" id="card-expiration-input" placeholder="01 / 23"/>
+                </div>
+                <div class="cvc-div">
+                    <label for="card-cvc-input">Security Code</label>
+                    <input type="text" id="card-cvc-input" placeholder="123"/>
+                </div>
+            </div>
             <button class="submit-button">Submit</button>
         </div>
 
-    </main>
+    </div>
     
 </body>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+
 </html>

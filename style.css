@@ -1,3 +1,14 @@
+@font-face{
+    font-family: "Credit";
+    src: url("./fonts/kredit.otf")
+}
+
+@font-face{
+    font-family: "Credit Shine";
+    src: url("./fonts/kredit\ shine.otf")
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +16,8 @@
 }
 
 body{
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 100vw;
     height:  100vh;
     display: flex;
@@ -13,17 +25,295 @@ body{
     justify-content: center;
 }
 
-main{
+.main{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.card-front{
+.card-cont{
     width: 400px;
     height: 250px;
-    background-image: linear-gradient(to left top, #212121, #1d1d1d, #1a1a1a, #161616, #121212);
+    position: relative;
+    perspective: 1000px;
+}
+
+.card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card-front,
+.card-back{
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     padding: 20px;
     color: white;
+    position: absolute;
+    backface-visibility: hidden;
 }
+
+.card-front{
+    background-image: linear-gradient(to left top, #303030, #2b2b2b, #262626, #212121, #1c1c1c);
+}
+
+.card-back{
+    background-image: linear-gradient(to left top, #303030, #2b2b2b, #262626, #212121, #1c1c1c);
+    transform: rotateY(180deg);
+    padding: 0;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+
+.card-front h2{
+    font-size: 35px;
+    font-family: sans-serif;
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    font-weight: lighter;
+    color: rgb(215, 215, 215);
+}
+
+.chip{
+    height: 55px;
+    position: relative;
+    left: 5px;
+    top: 55px;
+}
+
+.card-numb{
+    font-size: 30px;
+    position: absolute;
+    top: 130px;
+    left: 25px;
+    color: rgb(189, 189, 189);
+    font-family: "Credit";
+}
+
+.card-name-div{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    font-size: 20px;
+    font-family: "Credit";
+    color: rgb(188, 188, 188);
+}
+
+.first-name{
+   margin-right: 20px;;
+}
+
+.good-thru{
+    position: absolute;
+    left: 277px;
+    top: 185px;
+    color: rgb(188, 188, 188);
+    font-family: sans-serif;
+    font-size: 10px;;
+}
+
+.exp-date{
+    position: absolute;
+    left: 275px;
+    bottom: 30px;
+    font-family: "Credit";
+    color: rgb(188, 188, 188);
+    font-size: 20px;
+}
+
+.form{
+    margin-top: 15px;
+    width: 400px;
+    border: 1px solid rgb(154, 154, 154);
+    border-radius: 10px;
+}
+
+.form h3{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-family: sans-serif;
+}
+
+.image-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image-div img{
+    width: 64px;
+}
+
+.name-cont{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.name-div{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.number-div{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.expire-div{
+    width: 40%;
+}
+
+.cvc-div{
+    width: 40%;
+    margin: 0;
+}
+
+.expire-div input{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.cvc-div input{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.security-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 20px;
+    margin-right: 0;
+}
+
+label{
+    font-family: sans-serif;
+    margin-bottom: 5px;
+}
+
+input{
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid rgb(212, 212, 212);
+    padding-left: 10px;
+}
+
+.submit-button{
+    height: 45px;
+    width: 90%;
+    margin: 25px 5%;
+    background-color: rgb(68, 174, 255);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;;
+}
+
+
+
+.grayscale{
+    filter: grayscale(1)
+}
+
+.strip{
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    top: 30px;
+}
+
+.sign-title{
+    position: relative;
+    top: 40px;
+    left: 15px;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: rgb(207, 207, 207)
+}
+
+.signature-div{
+    position: absolute;
+    top: 120px;
+    left: 15px;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(224, 224, 224);
+    background-image: url("./images/dots.png");
+    background-size: cover;
+}
+
+.signature{
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/signature.png");
+    background-size: cover;
+}
+
+.cvc{
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 120px;
+    left: 210px;
+    background-color: rgb(224, 224, 224);
+    text-align: center;
+    line-height: 40px;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: black
+}
+
+.disclaimer{
+    font-family: sans-serif;
+    font-size: 10px;
+    position: absolute;
+    bottom: 30px;
+    max-width: 360px;
+    left: 20px;
+}
+
+.grayscale{
+    filter: grayscale(1)
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px){
+    .main{
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 350px){
+    .main{
+        transform: scale(0.5);
+    }
+}
+
