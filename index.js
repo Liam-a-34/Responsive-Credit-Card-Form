@@ -77,20 +77,24 @@ $("#card-last-name-input").on("input", function(){
     $(".last-name").text(typedLast)
 })
 
-$("#card-expiration-input").on("input", function(){
-    let typedExpire = $(this).val()
+ $("#card-expiration-input").on("input", function() {
+    let typedExpire = $(this).val();
+    let numericExpire = typedExpire.replace(/\D/g, ''); // Remove non-numeric characters
 
-    let maskedExpire = typedExpire.padEnd(4, '0').substr(0, 4);
-
-    let spacedExpire = maskedExpire.replace(/(.{2})(?!$)/g, "$1 / ")
-
-    if(flipCard == false){
-        $(".card").toggleClass("flipped");
-        flipCard = true
+    if (typedExpire !== numericExpire) {
+      $(this).val(numericExpire); // Update the input value without non-numeric characters
     }
 
-    $(".exp-date").text(spacedExpire)
-})
+    let maskedExpire = numericExpire.padEnd(4, '0').substr(0, 4);
+    let spacedExpire = maskedExpire.replace(/(.{2})(?!$)/g, "$1 / ");
+
+    if (!flipCard) {
+      $(".card").toggleClass("flipped");
+      flipCard = true;
+    }
+
+    $(".exp-date").text(spacedExpire);
+  });
 
 $("#card-cvc-input").on("input", function(){
     let typedCVC = $(this).val()
